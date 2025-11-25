@@ -4,6 +4,7 @@ import dexBotao1 from '/dex_botao1.png';
 import dexBotao2 from '/dex_botao2.png';
 import botaoFechar from '/close.png';
 import botaoShiny from '/shiny.png';
+import pokedexImage from '/pokedex.png';
 import axios from "axios";
 import './App.css'
 
@@ -177,7 +178,7 @@ function App() {
 
         </div>) : (
         <div className="main">
-          <img className='pokedexAberta' src="/pokedex.png" alt="Pokedex" />
+          <img className='pokedexAberta' src={pokedexImage} alt="Pokedex" />
           <h1 className='pokemonName'>{pokemon.name}</h1>
           <p className='pokemonId'>#{pokemon.id}</p>
 
