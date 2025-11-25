@@ -1,0 +1,201 @@
+
+.main {
+  display: inline-block;
+  margin-top: 1%;
+  padding: 15px;
+  position: relative;
+
+}
+
+.pokedex{
+  width: 100%;
+  max-width: 390px;
+
+}
+
+.pokedexAberta{
+  width: 100%;
+  max-width: 700px;
+ 
+}
+.title{
+  position: absolute;
+  bottom: 10%;
+  left: 55%;
+  transform: translate(-50%, -8%);
+  color: #070706;
+  font-size: clamp(12px, 5vw, 25px);
+  font-weight: 700;
+  text-shadow: 2px 2px 4px #f2bc33;
+}
+
+.buttonOpen{
+  cursor: pointer;
+  position: absolute;
+  bottom: 53%;
+  left: 55%;
+  transform: translate(-51%, 58%);
+  height: 10%;
+  background: none;
+  border: none;
+
+}
+.buttonOpenImage{
+  width: 57%;
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 50%;
+}
+.buttonOpenImage:hover {
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  transform: scale(1.03);
+}
+.pokemon{
+  width: 25%;
+  height: 25%;
+  position: absolute;
+  bottom: 30%;
+  left: 27%;
+  transform: translate(-48%, -50%);
+}
+.pokemonName{
+  position: absolute;
+  top: 43%;
+  right: 11%;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  font-size: clamp(8px, 5vw, 25px);
+  font-weight: 600;
+
+}
+.pokemonId{
+  position: absolute;
+  top: 36%;
+  right: 11%;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  font-size: clamp(8px, 5vw, 25px);
+  font-weight: 600;
+  
+}
+
+.pokemonType1{
+
+  position: absolute;
+  top: 84%;
+  right: 28%;
+  display: flex;
+  gap: 60%;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  font-size: clamp(8px, 5vw, 19px);
+  font-weight: 600;
+}
+.pokemonType2{
+  
+  position: absolute;
+  top: 84%;
+  right: 12%;
+  display: flex;
+  gap: 60%;
+  color: #f8f8f8;
+  text-transform: uppercase;
+  font-size: clamp(8px, 5vw, 19px);
+  font-weight: 600;
+  
+}
+.form{
+  position: absolute;
+  width: 35%;
+  top: 77%;
+  left: 27%;
+  transform: translate(-50%, -10%);
+}
+.search{
+  width: 100%;
+  padding: 4%;
+  outline: none;
+  border: 2px solid #333;
+  border-radius: 5px;
+  font-weight: 600;
+  color: #3a444d;
+  font-size: clamp(8px, 5vw, 1rem);
+  box-shadow: -3px 4px 0 #888888, -5px 7px 0 #333333;
+  
+}
+.buttons{
+  position: absolute;
+  bottom: 25%;
+  left: 58%;
+  width: 39%;
+  transform: translate( 3%, 0%);
+  display: flex;
+  gap: 5%;
+  
+}
+.buttonPrev{
+  width: 20%;
+  padding: 1%;
+  border: 2px solid #000;
+  border-radius: 5px;
+  font-size: clamp(8px, 5vw, 1rem);
+  font-weight: 600;
+  color: white;
+  background-color: #000;
+  box-shadow: -2px 3px 0 #222, -4px 6px 0 #000;
+  cursor: pointer;
+}
+.buttonPrev:active{
+  box-shadow: inset -4px 4px 0 #222;
+  font-size: 0.9rem;
+}
+.buttonShiny{
+  width: 6%;
+  height: 6%;
+  border-radius: 50%; /* deixa redondo */
+  border: none;
+  background: none;
+  position: absolute;
+  font-size: 16px;
+  cursor: pointer;
+  top: 70%;
+  left: 78%;
+  overflow: visible;
+}
+.brilho{
+  width: 80%;
+  height: 100%;
+}
+.buttonShiny:hover .brilho {
+  
+  animation: brilhoAnim 2s ease-in-out infinite;
+}
+
+@keyframes brilhoAnim {
+   0% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.2;
+  }
+}
+.buttonClose{
+  width: 6%;
+  height: 6%;
+  border-radius: 50%; /* deixa redondo */
+  border: none;
+  background: none;
+  position: absolute;
+  font-size: 16px;
+  cursor: pointer;
+  top: 15%;
+  left: 40%;
+  overflow: visible;
+  opacity: 0.8;
+}
+.fechar{
+  width: 80%;
+  height: 100%;
+}
