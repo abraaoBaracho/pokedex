@@ -1,4 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import dexFechada from '/dex_fechada.png';
+import dexBotao1 from '/dex_botao1.png';
+import dexBotao2 from '/dex_botao2.png';
+import botaoFechar from '/close.png';
+import botaoShiny from '/shiny.png';
 import axios from "axios";
 import './App.css'
 
@@ -43,9 +48,9 @@ function App() {
     if (intervalRef.current === null) {
       intervalRef.current = window.setInterval(() => {
         setDexBotao(prev =>
-          prev === '/dex_botao1.png'
-            ? '/dex_botao2.png'
-            : '/dex_botao1.png'
+          prev === dexBotao1
+            ? dexBotao2
+            : dexBotao1
         );
       }, 1000); // troca a cada 1 segundo
     }
@@ -75,7 +80,6 @@ function App() {
         };
 
         setPokemon(pokemonData);
-        pokemonCry();
         setShowyShiny(false);
       } else {
         alert('O último Pokémon da Pokédex Heartgold/SoulSilver é o 493-arceus !');
@@ -97,12 +101,6 @@ function App() {
 
   }
 
-  const pokemonCry = () => {
-    if (pokemon.cry) {
-      const audio = new Audio(pokemon.cry);
-      audio.play();
-    }
-  }
 
   const handleSearchChange = (e: React.FormEvent) => {
     e.preventDefault();
@@ -132,12 +130,16 @@ function App() {
 
   useEffect(() => {
 
+    if (pokemon.cry) {
+      const audio = new Audio(pokemon.cry);
+      audio.play();
+    }
 
     intervalRef.current = window.setInterval(() => {
       setDexBotao(prev =>
-        prev === '/dex_botao1.png'
-          ? '/dex_botao2.png'
-          : '/dex_botao1.png'
+        prev === dexBotao1
+          ? dexBotao2
+          : dexBotao1
       );
     }, 1000); // troca a cada 1 segundo
 
@@ -147,7 +149,7 @@ function App() {
       }
     };
 
-  }, []);
+  }, [pokemon]);
 
   const isShyne = () => {
     if (!showyShiny && pokemon.shiny) {
@@ -162,7 +164,7 @@ function App() {
     <>
       {!isOpen ? (
         <div className="main">
-          <img className='pokedex' src="/dex_fechada.png" alt="Pokedex" />
+          <img className='pokedex' src={dexFechada} alt="Pokedex" />
           <button
             className="buttonOpen"
             onClick={() => openPokedex()}
@@ -207,10 +209,10 @@ function App() {
             <button className='buttonPrev' onClick={getNextPokemon}> &gt;</button>{/* Next Button */}
           </div>
           <button onClick={isShyne} className='buttonShiny'>
-            <img src="/shiny.png" alt="brilho" className='brilho' />
+            <img src={botaoShiny} alt="brilho" className='brilho' />
           </button>
           <button onClick={closePokedex} className='buttonClose'>
-            <img src="/close.png" alt="brilho" className='fechar' />
+            <img src={botaoFechar} alt="brilho" className='fechar' />
           </button>
         </div>
       )}
